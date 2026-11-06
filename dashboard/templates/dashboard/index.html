@@ -1,0 +1,88 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FraudMail | Phishing Detection</title>
+    <link rel="stylesheet" href="{% static 'dashboard/style.css' %}">
+    <script src="{% static 'dashboard/script.js' %}" defer></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo"><span>◆</span> FraudMail</div>
+        <div class="nav-label">AI-Powered Email Security</div>
+    </nav>
+
+    <main class="container">
+        <div class="hero">
+            <div class="tag">✦ SMART FRAUDULENT EMAIL DETECTION</div>
+
+            <h1>Don't get caught by<br><span>phishing emails.</span></h1>
+
+            <p class="subtitle">
+                Upload a screenshot of an email and let our machine
+                learning model analyze it for potential threats.
+            </p>
+        </div>
+
+        <div class="upload-card">
+            <div class="upload-icon">↑</div>
+
+            <h2>Analyze an email</h2>
+            <p>Choose a screenshot to check for phishing.</p>
+
+            <label for="emailImage" class="upload-zone">
+                <div class="image-icon">▧</div>
+                <strong id="fileName">Click to select an image</strong>
+                <span>PNG, JPG, or JPEG</span>
+            </label>
+
+            <input
+                type="file"
+                id="emailImage"
+                accept="image/png,image/jpeg"
+                hidden
+            >
+
+            <button id="analyzeButton" class="analyze-btn">
+                Analyze Screenshot →
+            </button>
+
+            <div id="scanStatus" class="scan-status" hidden>
+                <div id="statusCircle" class="status-circle">
+                    <span id="statusSymbol"></span>
+                </div>
+
+                <h2 id="statusTitle"></h2>
+                <p id="result" role="status" aria-live="polite"></p>
+            </div>
+        </div>
+
+        <div class="features">
+            <div class="feature">
+                <span>01</span>
+                <h3>Upload</h3>
+                <p>Choose a screenshot of a suspicious email. Avoid screenshots that contain unrelated data.</p>
+            </div>
+
+            <div class="feature">
+                <span>02</span>
+                <h3>Extract</h3>
+                <p>OCR technology extracts the text from your image.</p>
+            </div>
+
+            <div class="feature">
+                <span>03</span>
+                <h3>Detect</h3>
+                <p>Our ML model checks for signs of phishing.</p>
+            </div>
+        </div>
+
+        <footer>
+            Built with Django
+        </footer>
+    </main>
+</body>
+</html>
